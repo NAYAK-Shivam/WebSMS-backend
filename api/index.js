@@ -16,9 +16,6 @@ app.use(
     origin: "https://web-sms-frontend.vercel.app", // React frontend URL
   })
 );
-app.get("/", (req, res) => {
-  res.send("Backend is running");
-});
 
 // MongoDB connection
 const dbURI = process.env.MONGODB_URI;
