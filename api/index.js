@@ -19,6 +19,10 @@ app.use(
     origin: "https://web-sms-frontend.vercel.app", // React frontend URL
   })
 );
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
+
 // MongoDB connection
 const dbURI = process.env.MONGODB_URI;
 mongoose
@@ -28,9 +32,4 @@ mongoose
 
 // Use the message route
 app.use("/api", messageRoutes);
-
-// Start the server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+module.exports = app;
