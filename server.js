@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 // Middleware to allow CORS
 app.use(
   cors({
-    origin: "http://localhost:3000", // React frontend URL
+    origin: "https://web-sms-frontend.vercel.app", // React frontend URL
   })
 );
 // MongoDB connection
