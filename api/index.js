@@ -2,13 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const messageRoutes = require("./routes/messages");
-
-// Load environment variables
+const messageRoutes = require("../routes/messages"); // Adjust path if necessary
 dotenv.config();
 const cors = require("cors");
 
-// Initialize Express
 const app = express();
 
 // Middleware to parse JSON request bodies
@@ -32,4 +29,6 @@ mongoose
 
 // Use the message route
 app.use("/api", messageRoutes);
+
+// Export the app for serverless deployment
 module.exports = app;
