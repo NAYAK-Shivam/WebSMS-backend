@@ -11,7 +11,7 @@ const router = express.Router();
 // Twilio client setup
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const client = twilio(accountSid, authToken);
+const client = new twilio(accountSid, authToken);
 
 // Route to send message
 router.post("/send-message", async (req, res) => {
